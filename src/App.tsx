@@ -42,6 +42,7 @@ function App() {
   return (
     <>  
       <div className="container-produtos">
+        <h2> Lista de Produtos</h2>
         {produtos.map(prod=>{
           return(
             <div key={prod.id} className="produto-item">
