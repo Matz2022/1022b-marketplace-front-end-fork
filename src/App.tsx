@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
+
 // Definindo o tipo para Produto
 type ProdutoType = {
   id:number,
@@ -24,7 +25,7 @@ function App() {
   //useEffect(O QUe fazer, Quando Fazer)
    // useEffect para buscar produtos
   useEffect(()=>{
-    fetch("https://one022b-marketplace-fork-back-end.onrender.com/produtos")
+    fetch("https://localhost:8000/produtos")
     .then(resposta=>resposta.json())
     .then(dados=>setProdutos(dados))
   },[])
