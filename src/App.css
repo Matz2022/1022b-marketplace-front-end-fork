@@ -1,8 +1,12 @@
 #root {
-  max-width: 1280px;
+  /*max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;*/
+  margin: 0 auto;
+  width: 80vw;
   text-align: center;
+  padding: 1vw;
 }
 
 .logo {
@@ -39,4 +43,25 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.produto-item{
+ border: 1px solid white;
+ border-radius: 5px;
+ padding: 30px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.produto-item>img{
+  height: 100px
+  
+}
+.produto-item>h1{
+  font-size: 30px;
+}
+
+.container-produtos{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(200px, 1fr));
+  gap: 20px;
 }
