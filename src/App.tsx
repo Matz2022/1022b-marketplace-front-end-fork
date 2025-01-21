@@ -17,24 +17,20 @@ function App() {
     .then(resposta=>resposta.json())
     .then(dados=>setProdutos(dados))
   },[])
-
   function handleExcluir(id:number){
     fetch(`http://localhost:8000/produtos/${id}`,{
       method:"DELETE"
     })
     .then(resposta=>{
       if(resposta.status==200){
-        alert("Excluido com sucesso")
+        alert("Excluído com sucesso")
         window.location.reload()
       }
-      else {
-          alert("Erro ao excluir")
+      else{
+        alert("Erro ao excluir")
       }
-  })
+    })
   }
-  
-
-
 
   return (
     <>  
@@ -45,9 +41,9 @@ function App() {
               <h1>{prod.nome}</h1>
               <img src={prod.imagem} alt="Imagem de celular" />
               <p><strong>R$</strong> {prod.preco}</p>
-              <p>Descrição: {prod.descricao}</p>
+              <p><strong>Descrição:</strong> {prod.descricao}</p>
               <button onClick={()=>{handleExcluir(prod.id)}}>Excluir</button>
-              <Link to= {`/alterar-produto/${prod.id}`}>Alterar</Link>
+              <Link to={`/alterar-produto/${prod.id}`}>Alterar</Link>
             </div>
           )
         })}
