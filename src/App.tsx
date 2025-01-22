@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import './App.css'
 
 type ProdutoType = {
@@ -34,20 +35,20 @@ function App() {
 
   return (
     <>  
-      <div className="container-produtos">
+      <main className="container-produtos">
         {produtos.map(prod=>{
           return(
             <div key={prod.id} className="produto-item">
               <h1>{prod.nome}</h1>
               <img src={prod.imagem} alt="Imagem de celular" />
-              <p><strong>R$</strong> {prod.preco}</p>
-              <p><strong>Descrição:</strong> {prod.descricao}</p>
+              <p>{prod.preco}</p>
+              <p>{prod.descricao}</p>
               <button onClick={()=>{handleExcluir(prod.id)}}>Excluir</button>
               <Link to={`/alterar-produto/${prod.id}`}>Alterar</Link>
             </div>
           )
         })}
-      </div>
+      </main>
       
     </>
   )
